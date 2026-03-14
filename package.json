@@ -1,0 +1,30 @@
+{
+  "name": "restaurant-page",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/belovedEmperor/restaurant-page#readme",
+  "bugs": {
+    "url": "https://github.com/belovedEmperor/restaurant-page/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/belovedEmperor/restaurant-page.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "webpack",
+    "dev": "webpack serve"
+  },
+  "devDependencies": {
+    "css-loader": "^7.1.4",
+    "html-loader": "^5.1.0",
+    "html-webpack-plugin": "^5.6.6",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.105.4",
+    "webpack-cli": "^7.0.0",
+    "webpack-dev-server": "^5.2.3"
+  }
+}
