@@ -16,12 +16,12 @@ export default class Home {
   buildDescription() {
     const section = document.createElement("section");
     const header = document.createElement("h1");
+    header.textContent = "Description";
 
     const strong1 = document.createElement("strong");
     strong1.textContent = "Fire Bowl";
     const strong2 = document.createElement("strong");
     strong2.textContent = "Fire Bowl Express";
-    header.textContent = "Description";
     const paragraph1 = document.createElement("p");
     paragraph1.append(
       strong1,
