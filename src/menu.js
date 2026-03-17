@@ -14,6 +14,8 @@ export default class Menu {
         const item = document.createElement("div");
 
         // I know there are issues with this, I just can't be bothered right now
+        // The point of this is the different pages
+        // I'll just treat this mostly as just boilerplate
         if (menuItem.description) {
           item.innerHTML = `
             <p>${menuItem.name}</p>
@@ -359,7 +361,9 @@ export default class Menu {
     return this.MENU;
   }
 
-  render(element) {
-    return element.append(this.buildMenu());
+  render() {
+    const div = document.createElement("div");
+    div.append(this.buildMenu());
+    return div;
   }
 }

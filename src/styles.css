@@ -14,11 +14,15 @@ body {
 
 #content {
   width: 50vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 3rem;
+
+  > div {
+    width: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+  }
 }
 
 section {
@@ -41,4 +45,17 @@ section {
   li {
     list-style-type: none;
   }
+}
+
+button {
+  border: none;
+  padding: 1rem 2rem;
+  margin: 0 1rem 2rem;
+  border-radius: 0 0 12px 12px;
+}
+button:hover {
+  cursor: pointer;
+}
+.currentPage {
+  background-color: pink;
 }

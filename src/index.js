@@ -1,38 +1,42 @@
 import "./styles.css";
 import Home from "./home.js";
 import Menu from "./menu.js";
+import About from "./about.js";
 
 const PAGES = {
   home: 0,
   menu: 1,
   about: 2,
 };
+let previousPage = PAGES.home;
 
 const content = document.querySelector("#content");
 
 function handleChangePage(page) {
+  content.innerHTML = "";
+  let newContent;
   switch (true) {
     case page === PAGES.menu:
-      content.innerHTML = "";
-      new Menu().render(content);
-      return true;
-    //     case page === PAGES.about:
-    //       content.innerHTML = ""
-    // new About().render(content);
-    //       return true;
+      newContent = new Menu().render();
+      break;
+    case page === PAGES.about:
+      newContent = new About().render();
+      break;
     default:
-      content.innerHTML = "";
-      new Home().render(content);
-      return true;
+      newContent = new Home().render();
+      break;
   }
+  changeCurrentPage(page);
+  content.append(newContent);
 }
 
-new Menu().render(content);
+function changeCurrentPage(currentPage) {
+  buttons[previousPage].classList.remove("currentPage");
+  buttons[currentPage].classList.add("currentPage");
+  previousPage = currentPage;
+}
 
 const buttons = document.querySelectorAll("button");
-const homeButton = buttons[0];
-const menuButton = buttons[1];
-const aboutbutton = buttons[2];
 
 for (const page in PAGES) {
   const index = PAGES[page];
@@ -40,3 +44,5 @@ for (const page in PAGES) {
     handleChangePage(index);
   });
 }
+
+handleChangePage(PAGES.home);

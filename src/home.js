@@ -70,12 +70,14 @@ export default class Home {
     return section;
   }
 
-  render(element) {
-    element.append(
+  render() {
+    const div = document.createElement("div");
+    div.append(
       this.buildLogo(),
       this.buildDescription(),
       this.buildHours(),
       this.buildAddress(),
     );
+    return div;
   }
 }
